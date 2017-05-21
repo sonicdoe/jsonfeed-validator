@@ -8,11 +8,17 @@
   "engines": {
     "node": ">=4"
   },
+  "scripts": {
+    "test": "standard"
+  },
   "keywords": [
     "json feed",
     "json",
     "feed",
     "validator",
     "validate"
-  ]
+  ],
+  "devDependencies": {
+    "standard": "^10.0.2"
+  }
 }
