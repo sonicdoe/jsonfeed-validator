@@ -9,7 +9,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard && ava"
   },
   "keywords": [
     "json feed",
@@ -19,6 +19,7 @@
     "validate"
   ],
   "devDependencies": {
+    "ava": "^0.19.1",
     "standard": "^10.0.2"
   }
 }
