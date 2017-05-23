@@ -5,6 +5,9 @@
   "license": "ISC",
   "repository": "sonicdoe/jsonfeed-validator",
   "author": "Jakob Krigovsky <jakob@krigovsky.com>",
+  "files": [
+    "index.js"
+  ],
   "engines": {
     "node": ">=4"
   },
