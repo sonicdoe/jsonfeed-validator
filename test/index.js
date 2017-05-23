@@ -9,3 +9,7 @@ test('schema validation', t => {
     'should have required property \'id\' at path \'.items[0]\''
   ])
 })
+
+test('feed is not an object', t => {
+  t.throws(() => validate('{}'), TypeError)
+})

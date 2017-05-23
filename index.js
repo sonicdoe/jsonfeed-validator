@@ -5,6 +5,10 @@ const ajv = new Ajv()
 const schema = require('jsonfeed-schema')
 
 module.exports = feed => {
+  if (typeof feed !== 'object') {
+    throw new TypeError('feed must be an object')
+  }
+
   const valid = ajv.validate(schema, feed)
 
   if (!valid) {
