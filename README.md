@@ -1,5 +1,8 @@
 # jsonfeed-validator
 
+[![Node.js package](https://img.shields.io/npm/v/jsonfeed-validator.svg)](https://www.npmjs.com/package/jsonfeed-validator)
+[![Build status](https://img.shields.io/travis/sonicdoe/jsonfeed-validator.svg)](https://travis-ci.org/sonicdoe/jsonfeed-validator)
+
 > [JSON Feed](https://jsonfeed.org) validator
 
 ## Installation
