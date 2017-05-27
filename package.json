@@ -6,7 +6,9 @@
   "repository": "sonicdoe/jsonfeed-validator",
   "author": "Jakob Krigovsky <jakob@krigovsky.com>",
   "files": [
-    "index.js"
+    "index.js",
+    "lib",
+    "rules"
   ],
   "engines": {
     "node": ">=4"

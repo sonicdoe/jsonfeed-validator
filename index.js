@@ -1,23 +1,29 @@
 'use strict'
 
-const Ajv = require('ajv')
-const ajv = new Ajv()
-const schema = require('jsonfeed-schema')
+const path = require('path')
+const fs = require('fs')
+const Context = require('./lib/context')
+
+const rulesPath = path.join(__dirname, 'rules')
+const ruleIds = fs.readdirSync(rulesPath).map(file => path.basename(file, '.js'))
 
 module.exports = feed => {
   if (typeof feed !== 'object') {
     throw new TypeError('feed must be an object')
   }
 
-  const valid = ajv.validate(schema, feed)
+  const results = []
 
-  if (!valid) {
-    const results = ajv.errors.map(error => {
-      return `${error.message} at path '${error.dataPath}'`
-    })
+  for (const ruleId of ruleIds) {
+    const rule = require(path.join(rulesPath, ruleId))
+    const context = new Context(feed)
 
-    return results
+    rule(context)
+
+    for (const report of context.reports) {
+      results.push(Object.assign(report, { ruleId }))
+    }
   }
 
-  return true
+  return results
 }
