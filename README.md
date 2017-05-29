@@ -32,7 +32,10 @@ const feed = {
 const results = validate(feed)
 /*
   [
-    'should have required property \'id\' at path \'.items[0]\''
+    {
+      ruleId: 'schema',
+      message: 'should have required property \'id\' at path \'.items[0]\''
+    }
   ]
 */
 ```
